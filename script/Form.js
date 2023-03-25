@@ -9,7 +9,6 @@ export default class FormHandler {
     peselError,
     birthDateError
   ) {
-    this.PersonalsRegex = /^[a-zA-Z]/;
     this.PeselControlWeights = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3];
     this.PeselRegex = /^[0-9]{11}$/;
 
@@ -63,11 +62,6 @@ export default class FormHandler {
       return false;
     }
 
-    if (!this.PersonalsRegex.test(nameValueTrimed)) {
-      this.nameError.innerText = "Pole może zawierać tylko litery.";
-      return false;
-    }
-
     this.nameError.innerText = "";
     return true;
   }
@@ -77,11 +71,6 @@ export default class FormHandler {
 
     if (surnameValueTrimed < 1) {
       this.surnameError.innerText = "Nazwisko jest wymagane.";
-      return false;
-    }
-
-    if (!this.PersonalsRegex.test(surnameValueTrimed)) {
-      this.surnameError.innerText = "Nazwisko może zawierać tylko litery.";
       return false;
     }
 
