@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>heyCloud Recrutment - Bartosz Ratajczyk</title>
+  </head>
+  <body>
+    <div class="modal-backdrop" id="modalBackdrop">
+      <div class="modal shadow-util gradient-util" id="modal">
+        <div class="modal-container">
+          <h1 id="modalMessage" class="modal-message"></h1>
+          <button id="closeModalButton">Close</button>
+        </div>
+      </div>
+    </div>
+    <main class="gradient-util">
+      <form action="" class="shadow-util" id="form">
+        <h1 class="title">heyCloud</h1>
+        <div class="input-container">
+          <label for="name">Imię</label>
+          <input
+            id="nameInput"
+            type="text"
+            name="name"
+            placeholder="Imię"
+            maxlength="20"
+          />
+          <p class="error" id="nameError"></p>
+        </div>
+        <div class="input-container">
+          <label for="surname">Nazwisko</label>
+          <input
+            id="surnameInput"
+            type="text"
+            name="surname"
+            placeholder="Nazwisko"
+            maxlength="30"
+          />
+          <p class="error" id="surnameError"></p>
+        </div>
+        <div class="input-container">
+          <label for="pesel">PESEL</label>
+          <input id="peselInput" type="text" name="pesel" placeholder="PESEL" />
+          <p class="error" id="peselError"></p>
+        </div>
+        <div class="input-container">
+          <label for="birthDate">Data urodzenia</label>
+          <input id="birthDateInput" type="date" name="birthDate" />
+          <p class="error" id="birthDateError"></p>
+        </div>
+        <input type="submit" value="Wyślij" />
+      </form>
+    </main>
+
+    <script type="module" defer src="./script/index.js"></script>
+  </body>
+</html>
