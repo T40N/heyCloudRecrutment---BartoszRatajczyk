@@ -16,8 +16,17 @@ Server:
   * node.js
   * express.js
     
+Prerequisites:
+ * docker
+ * docker-compose-plugin
+ * node.js
+ * local server for client side (in development I used Live Server extension in vs code)
+
 Instruction:
-  1. ``` docker compose up ``` commend in root directory.
-  2. ``` node server/index.js ``` commend in server directory.
-  3. Open index.html from client directory in browser.
+
+  1. ``` docker compose up ``` - open docker containers with database.
+  2. ``` cd server ``` - open server directory.
+  3. ``` npm i ``` - install server dependency. 
+  4. ``` node index.js ``` - open local server at localhost:3000.
+  6. Open index.html from client directory in local server (e.g. Live Server).
   
