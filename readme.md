@@ -18,6 +18,6 @@ Server:
     
 Instruction:
   1. ``` docker compose up ``` commend in root directory.
-  2. ``` node index.js ``` commend in server directory.
+  2. ``` node server/index.js ``` commend in server directory.
   3. Open index.html from client directory in browser.
   
