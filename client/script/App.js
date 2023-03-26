@@ -1,8 +1,10 @@
-import FormHandler from "./Form.js";
-import Modal from "./Modal.js";
+import FormHandler from "./FormHandler.js";
+import ModalHandler from "./ModalHandler.js";
 
 export default class App {
-  constructor() {
+  constructor(serverUrl) {
+    this.serverURL = serverUrl;
+
     this.form = document.getElementById("form");
     this.nameInput = document.getElementById("nameInput");
     this.surnameInput = document.getElementById("surnameInput");
@@ -28,7 +30,7 @@ export default class App {
       this.peselError,
       this.birthDateError
     );
-    this.modal = new Modal(
+    this.modal = new ModalHandler(
       modal,
       modalBackdrop,
       modalMessage,
@@ -38,13 +40,33 @@ export default class App {
     this.form.addEventListener("submit", this.handleSubmit.bind(this), false);
   }
 
-  handleSubmit(event) {
+  async handleSubmit(event) {
     event.preventDefault();
     this.modal.openModal();
     if (this.formHandler.validateForm()) {
-      this.modal.setModalMessage("sukces");
+      try {
+        await this.sendData(this.formHandler.getFormData());
+        this.modal.setModalMessage("sukces");
+      } catch {
+        this.modal.setModalMessage("błąd");
+      }
     } else {
       this.modal.setModalMessage("błąd");
+    }
+  }
+
+  async sendData(requestBody) {
+    try {
+      await fetch(this.serverURL, {
+        method: "POST",
+        body: JSON.stringify(requestBody),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "*/*",
+        },
+      });
+    } catch (err) {
+      throw err;
     }
   }
 }

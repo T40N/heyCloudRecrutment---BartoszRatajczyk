@@ -146,7 +146,7 @@ input[type="submit"]:active {
   border-radius: 1rem;
 
   animation-name: modal-animation;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }

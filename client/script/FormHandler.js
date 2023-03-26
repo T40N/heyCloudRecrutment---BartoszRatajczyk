@@ -44,6 +44,15 @@ export default class FormHandler {
     );
   }
 
+  getFormData() {
+    return {
+      name: this.nameInput.value,
+      surname: this.surnameInput.value,
+      pesel: this.peselInput.value,
+      birthDate: this.birthDateInput.value,
+    };
+  }
+
   validateForm() {
     console.log(
       "fullValidation: ",

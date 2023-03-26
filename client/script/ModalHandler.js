@@ -1,4 +1,4 @@
-export default class Modal {
+export default class ModalHandler {
   constructor(modal, modalBackdrop, modalMessage, closeModalButton) {
     this.modal = modal;
     this.modalBackdrop = modalBackdrop;
