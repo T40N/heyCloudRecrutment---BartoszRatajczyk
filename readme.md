@@ -1,11 +1,15 @@
 # heyCloud recrutment - Bartosz Ratajczyk
 
 Tools used:
+
 Client:
+
   * HTML
   * CSS
   * JavaScript
+
 Server:
+
   * docker-compose
   * PostgreSQL in docker container
   * pgAdmin4 in docker container
