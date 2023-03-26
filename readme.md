@@ -15,6 +15,7 @@ Server:
   * pgAdmin4 in docker container
   * node.js
   * express.js
+  * sequelize
     
 Prerequisites:
  * docker
